@@ -29,6 +29,10 @@ class Univariate():
             descriptive[columnName]["1.5*IQR"]=1.5*descriptive[columnName]["IQR"]
             descriptive[columnName]["Lesser"]=descriptive[columnName]["Q1:25%"]-descriptive[columnName]["1.5*IQR"]
             descriptive[columnName]["Greater"]=descriptive[columnName]["Q3:75%"]+descriptive[columnName]["1.5*IQR"]
+            descriptive[columnName]["Skewness"]=dataset[columnName].skew()
+            descriptive[columnName]["Kurtosis"]=dataset[columnName].kurtosis()
+            descriptive[columnName]["var"]=dataset[columnName].var()
+            descriptive[columnName]["STD"]=dataset[columnName].std()
         return descriptive
         
     def findOutlierCols(descriptive,quan):
